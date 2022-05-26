@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css'
+import {useEffect,useState} from 'react'
+import {Routes,Route,Link,Outlet} from 'react-router-dom'
+import Home from './components/Home'
+import Contact from './components/Contact'
+import Tech from './components/Tech'
+import Html from './components/Html'
+import Java from './components/Java'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+ 
+  
+return(
+<div className='text-center'>
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#">My React app</a>
+    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div className="navbar-nav">
+        <Link className="nav-link active" to="home">Home</Link>
+        <Link className="nav-link" to="contact">Contact</Link>
+        <Link className="nav-link" to="tech">Tech</Link>
+      </div>
+    </div>
+  </div>
+</nav>
+
+ <Routes>
+ <Route path="" element={ <Home/> }/>
+ <Route path="/home" element={ <Home/> }/>
+   <Route path="/contact" element={ <Contact/> } />
+
+   <Route path="/tech" element={<Tech/>}></Route>
+ </Routes>
+  <Outlet></Outlet>
+  </div>)
+
+}
 export default App;
