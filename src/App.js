@@ -12,7 +12,7 @@ function App() {
  
   
 return(
-<div className='text-center'>
+<div className='text-center text-info'>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">My React app</a>
